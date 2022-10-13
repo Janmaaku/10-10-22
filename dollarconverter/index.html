@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+    <div id="mainWrapper">
+        <div class="container">
+            <div class="wrapper">
+                <div class="row">
+                    <h1 class="text-center text-white mb-5 pb-3" style="border-bottom: 2px solid white;">CURRENCY</h1>
+                    <div class="col-md-5">
+                        <label style="font-size: 25px;margin-bottom: 10px;" for="amount">Your Amount</label>
+                        <div style="position: relative;" class="form-group">
+                            <span id="currencyIcon">$</span>
+                            <input style="padding-left: 30px;" class="form-control" type="number" placeholder="Amount" id="amount">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label style="font-size: 25px;margin-bottom: 10px;" for="to">From</label>
+                        <div class="form-group">
+                            <select class="form-control" id="From">
+                                <option  value="">- SELECT -</option>
+                                <option  value="1">USD</option>
+                                <option  value="2">EUR</option>
+                                <option value="3">GBP</option>
+                              </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-1">
+                        <div class="iconWrapper">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="buttonWrapper mt-5">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <button type="button" id="convert"
+                            onclick=" 
+                            let select = document.getElementById('From');
+                            let value = select.options[select.selectedIndex].value;
+                            if (value == '1'){
+                                document.getElementById('ans').innerHTML = (usdFunction());
+                            }
+                            else   if (value == ('2')){
+                                document.getElementById('ans').innerHTML = (erFunction());
+                            }else   if (value == ('3')){
+                                document.getElementById('ans').innerHTML = (gbFunction());
+                            }
+                        
+                            
+                            ">Convert</button>
+                        </div>
+
+                        <div class="col-md-7">
+                            <input id="calculate" type="submit" class="btn btn-success w-100" value="CALCULATE">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="ans">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+<script type="text/javascript" src="main.js"></script>
+</html>
+
+
+
+
+<div class="col-md-5">
+    <label style="font-size: 25px;margin-bottom: 10px;" for="amount">Your Amount</label>
+    <div style="position: relative;" class="form-group">
+        <span id="currencyIcon">$</span>
+        <input style="padding-left: 30px;" class="form-control" type="number" placeholder="Amount" id="amount">
+    </div>
+</div>
+<label>From:</label>
+
+
+
+<p id="ans">The convert to PHP will respone here:</p>
